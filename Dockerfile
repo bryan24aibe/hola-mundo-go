@@ -3,13 +3,24 @@ FROM golang:1.20 as builder
 
 WORKDIR /app
 
+
 COPY . .
 
-RUN go mod init hola-mundo && go mod tidy && go build -o app
 
-FROM alpine:latest
+RUN go mod init hola-mundo && go mod tidy
 
-COPY --from=builder /app/app /app/app
+
+FROM golang:1.20
+
 
 WORKDIR /app
-CMD ["./app"]
+
+
+COPY --from=builder /app /app
+
+
+EXPOSE 8080
+
+
+CMD ["go", "run", "main.go"]
+
