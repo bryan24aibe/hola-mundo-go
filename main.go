@@ -19,9 +19,11 @@ func main() {
         port = "8080" // Puerto por defecto para local
     }
 
-    fmt.Printf("Servidor escuchando en http://localhost:%s\n", port)
+    fmt.Println("Servidor escuchando en puerto:", port)
     err := http.ListenAndServe(":"+port, nil)
     if err != nil {
-        fmt.Println("Error al iniciar el servidor:", err)
+        log.Fatal("Error al iniciar el servidor:", err)
     }
-}
+    
+    }
+
