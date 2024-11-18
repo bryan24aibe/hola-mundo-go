@@ -4,6 +4,7 @@ import (
     "fmt"
     "net/http"
     "os" // Importar paquete para leer variables de entorno
+    "log" // Importar el paquete log
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
