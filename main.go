@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "net/http"
-    "os" // Importar paquete para leer variables de entorno
+    "os"  // Importar paquete para leer variables de entorno
     "log" // Importar el paquete log
 )
 
@@ -25,6 +25,4 @@ func main() {
     if err != nil {
         log.Fatal("Error al iniciar el servidor:", err)
     }
-    
-    }
-
+}
